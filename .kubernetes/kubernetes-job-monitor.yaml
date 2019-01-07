@@ -3,7 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kubernetes-job-monitor
-  namespace: global
+  namespace: pythondemos
 spec:
   rules:
   - host: kubernetes-job-monitor.local
@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kubernetes-job-monitor
-  namespace: global
+  namespace: pythondemos
   labels:
     app: kubernetes-job-monitor
 spec:
@@ -33,7 +33,7 @@ metadata:
   labels:
     app: kubernetes-job-monitor
   name: kubernetes-job-monitor
-  namespace: global
+  namespace: pythondemos
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
@@ -57,13 +57,13 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kubernetes-job-monitor
-  namespace: global
+  namespace: pythondemos
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kubernetes-job-monitor
-  namespace: global
+  namespace: pythondemos
   labels:
     app: kubernetes-job-monitor
 spec:
