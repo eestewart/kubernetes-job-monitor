@@ -32,10 +32,10 @@ def get_jobs(namespace=None, selector=None):
         for item in data['items']:
             job_name = None
 
-            # Determine job name from CronJob name, skip non CronJob jobs
+            # Determine job name from Job name, skip non Job jobs
             if 'ownerReferences' in item['metadata']:
                 owner_reference = item['metadata']['ownerReferences'][0]
-                if owner_reference['kind'] == 'CronJob':
+                if owner_reference['kind'] == 'Job':
                     job_name = owner_reference['name']
 
             if not job_name:
