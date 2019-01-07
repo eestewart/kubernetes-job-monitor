@@ -6,7 +6,7 @@ easy to see which jobs are running and if their latest status was "succeeded" or
 The frontend is derived from the awesome Jenkins Build Monitor Plugin. The application uses kubectl inside
 the container to retrieve the data from Kubernetes.
 
-![Kubernetes job monitor](https://raw.githubusercontent.com/pietervogelaar/kubernetes-job-monitor/master/docs/kubernetes-job-monitor.png)
+![Kubernetes job monitor](https://raw.githubusercontent.com/eestewart/kubernetes-job-monitor/master/docs/kubernetes-job-monitor.png)
 
 ## Installation
 
@@ -16,7 +16,7 @@ This option is the easiest and the recommended way of installing. The Kubernetes
 the cluster it is deployed to. Permissions are granted by a service account and cluster role.   
 
     kubectl create namespace global
-    kubectl apply -f https://raw.githubusercontent.com/pietervogelaar/kubernetes-job-monitor/master/.kubernetes/kubernetes-job-monitor.yaml
+    kubectl apply -f https://raw.githubusercontent.com/eestewart/kubernetes-job-monitor/master/.kubernetes/kubernetes-job-monitor.yaml
     
 The Kubernetes job monitor is deployed to the namespace "global", but can be anything.
 
@@ -52,7 +52,7 @@ Apply in the same namespace as the Kubernetes job monitor:
 This secret will be mounted inside the container so that kubectl can use it. The apply command below deploys the
 Kubernetes job monitor to the current namespace.
 
-    kubectl apply -f https://raw.githubusercontent.com/pietervogelaar/kubernetes-job-monitor/master/.kubernetes/kubernetes-job-monitor-kubeconfig.yaml
+    kubectl apply -f https://raw.githubusercontent.com/eestewart/kubernetes-job-monitor/master/.kubernetes/kubernetes-job-monitor-kubeconfig.yaml
 
 **Note**: You should review the manifest above, to configure the correct host and Kubernetes dashboard URL for
 deep linking.
@@ -78,8 +78,8 @@ of query parameters are available.
 
     kubectl create namespace namespace-a
     kubectl create namespace namespace-b
-    kubectl apply -f https://raw.githubusercontent.com/pietervogelaar/kubernetes-job-monitor/master/.kubernetes/test-cron-jobs.yaml
+    kubectl apply -f https://raw.githubusercontent.com/eestewart/kubernetes-job-monitor/master/.kubernetes/test-cron-jobs.yaml
 
 ## References
 
-- [https://hub.docker.com/r/pietervogelaar/kubernetes-job-monitor/](https://hub.docker.com/r/pietervogelaar/kubernetes-job-monitor/)
+- [https://hub.docker.com/r/eestewart/kubernetes-job-monitor/](https://hub.docker.com/r/eestewart/kubernetes-job-monitor/)
